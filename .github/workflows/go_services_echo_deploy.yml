@@ -1,0 +1,32 @@
+name: go_services_echo_deploy
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'go/services/echo/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: go/services/echo
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test
+        run: |
+          go test -v ./...
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: go/services/echo
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build
+        run: |
+          echo deploy
