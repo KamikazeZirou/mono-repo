@@ -17,6 +17,7 @@ jobs:
         with:
           version: v1.29
           working-directory: ${{ inputs.working-directory }}
+          args: -c $GITHUB_WORKSPACE/go/.golangci.yml
   test:
     runs-on: ubuntu-latest
     defaults:
