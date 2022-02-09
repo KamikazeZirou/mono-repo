@@ -1,0 +1,13 @@
+name: go_services_echo_pr
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'go/services/helloworld/**'
+
+jobs:
+  pr:
+    uses: ./.github/workflows/reusable_go_services_pr.yml
+    with:
+      working-directory: go/services/helloworld

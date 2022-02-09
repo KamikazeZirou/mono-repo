@@ -1,0 +1,13 @@
+name: go_services_echo_deploy
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'go/services/helloworld/**'
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/reusable_go_services_deploy.yml
+    with:
+      working-directory: go/services/helloworld
