@@ -7,23 +7,7 @@ on:
       - 'go/services/echo/**'
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v2
-        with:
-          version: v1.29
-          working-directory: go/services/echo
-  test:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: go/services/echo
-    steps:
-      - uses: actions/checkout@v2
-      - name: Test
-        run: |
-          go test -v ./...
+  pr:
+    uses: ./.github/workflows/reusable_go_services_pr.yml
+    with:
+      working-directory: go/services/echo
