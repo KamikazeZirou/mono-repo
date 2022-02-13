@@ -1,0 +1,30 @@
+name: go_services_echo_release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Tagのバージョン"
+        required: true
+        type: string
+
+jobs:
+  deploy_to_preview:
+    uses: ./.github/workflows/reusable_go_services_deploy.yml
+    with:
+      working-directory: go/services/echo
+  release:
+    needs: deploy_to_preview
+    runs-on: ubuntu-latest
+    environment:
+      name: go_services_echo
+    steps:
+      - uses: actions/checkout@v2
+      - name: release
+        run: |
+          echo release
+  tagging:
+    needs: release
+    uses: ./.github/workflows/reusable_tagging.yml
+    with:
+      tag: go/services/echo/${{ github.event.inputs.version }}
