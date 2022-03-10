@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "helloworld": "apps/helloworld",
+    "lib1": "libs/lib1"
+  }
+}
