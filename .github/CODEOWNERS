@@ -1,9 +1,8 @@
 # Default
-@KamikazeZirou
+.github/ @KamikazeZirou
 
 # Go
-/go/services/echo @KamikazeZirou
+/go/services/echo/ @KamikazeZirou @ZirouTanaka
 
 # Flutter
-/flutter/ @KamikazeZirou @ZirouTanaka
-
+# /flutter/ @KamikazeZirou @ZirouTanaka

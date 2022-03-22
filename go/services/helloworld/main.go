@@ -15,5 +15,5 @@ func main() {
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
 	_ = r.ParseForm()
-	_, _ = fmt.Fprintf(w, "Hello World!")
+	_, _ = fmt.Fprintf(w, "Hello World2!")
 }
