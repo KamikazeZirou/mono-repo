@@ -14,3 +14,10 @@ jobs:
           echo ${{ github.event.push.ref }}
           echo before ${{ github.event.push.before }}
           echo after ${{ github.event.push.after }}
+          echo $REF
+          echo $BEFORE
+          echo $AFTER
+    env:
+      REF: ${{ github.event.push.ref }}
+      BEFORE: ${{ github.event.push.before }}
+      AFTER: ${{ github.event.push.after }}
