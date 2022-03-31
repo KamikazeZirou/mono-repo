@@ -11,13 +11,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build
         run: |
-          echo ${{ github.event.push.ref }}
-          echo before ${{ github.event.push.before }}
-          echo after ${{ github.event.push.after }}
+          echo ${{ github.event.ref }}
+          echo before ${{ github.event.before }}
+          echo after ${{ github.event.after }}
           echo $REF
           echo $BEFORE
           echo $AFTER
     env:
-      REF: ${{ github.event.push.ref }}
-      BEFORE: ${{ github.event.push.before }}
-      AFTER: ${{ github.event.push.after }}
+      REF: ${{ github.event.ref }}
+      BEFORE: ${{ github.event.before }}
+      AFTER: ${{ github.event.after }}
